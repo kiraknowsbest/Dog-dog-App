@@ -218,7 +218,7 @@
 }
 
 .post {
-    
+    padding: 15px;
     border: 2px solid #ddd;
     border-radius: 5px;
     width: 80%;
@@ -233,7 +233,7 @@
 .post:hover {
    border: 1px solid #ffc447a1;
    outline: none;
-   box-shadow: 0 0 20px #ffc447a1; 
+   box-shadow: 0 0 20px #ffc447a1;
 }
 
 .post-image {
@@ -699,7 +699,7 @@ span.psw {
 }
 
 .post-page-title:hover {
-    text-shadow: .75px .5px rgba(100, 100, 100, .8); 
+    text-shadow: .75px .5px rgba(100, 100, 100, .8);
 }
 
 .post-page-title-box {
@@ -730,9 +730,9 @@ span.psw {
 
 .post-page-box:hover {
    color: red;
-   box-shadow: 0 0 20px #ff5447; 
+   box-shadow: 0 0 20px #ff5447;
    border: 2px solid ;
-   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ; 
+   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ;
    background-repeat: no-repeat;
    background-size: 300px 200px;
    background-position: center;
@@ -761,9 +761,9 @@ span.psw {
 
 .info-box:hover {
    color: red;
-   box-shadow: 0 0 20px #ff5447; 
+   box-shadow: 0 0 20px #ff5447;
    border: 2px solid ;
-   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ; 
+   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ;
    background-repeat: no-repeat;
    background-size: 300px 200px;
    background-position: center;
@@ -783,11 +783,11 @@ span.psw {
 }
 
 .price-box:hover {
-   
+
    color: red;
-   box-shadow: 0 0 20px #ff5447; 
+   box-shadow: 0 0 20px #ff5447;
    border: 2px solid ;
-   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ; 
+   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ;
    background-repeat: no-repeat;
    background-size: 300px 200px;
    background-position: center;
@@ -811,9 +811,9 @@ span.psw {
 }
 .connect-box:hover {
    color: red;
-   box-shadow: 0 0 20px #ff5447; 
+   box-shadow: 0 0 20px #ff5447;
    border: 2px solid ;
-   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ; 
+   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ;
    background-repeat: no-repeat;
    background-size: 300px 200px;
    background-position: center;
@@ -832,9 +832,9 @@ span.psw {
 }
 .location-box:hover {
    color: red;
-   box-shadow: 0 0 20px #ff5447; 
+   box-shadow: 0 0 20px #ff5447;
    border: 2px solid ;
-   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ; 
+   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ;
    background-repeat: no-repeat;
    background-size: 300px 200px;
    background-position: center;
