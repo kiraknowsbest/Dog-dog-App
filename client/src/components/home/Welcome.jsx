@@ -31,7 +31,6 @@ class Welcome extends React.Component {
 
   locationHandler(e) {
   	this.props.changeLocationToStore(e.target.value)
-  	console.log("locationHandler",this.props.location);
   }
 
 	render() {

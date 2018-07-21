@@ -9,8 +9,6 @@ import ClickSale from './clickSale.jsx'
 import FilterBox from './FilterBox.jsx'
 
 
-// import { fakeData } from './fakedata.js';
-
 const mapStateToProps = (state, props) => {
 
 	return {
@@ -43,7 +41,7 @@ class Sale extends React.Component {
 	    	postsPerPage:5,
 	    };
 	this.showComponent = this.showComponent.bind(this);
-	this.changeView = this.changeView.bind(this);
+	// this.changeView = this.changeView.bind(this);
 	this.changeCurrentPost = this.changeCurrentPost.bind(this);
 	this.handleClickPage = this.handleClickPage.bind(this);
 	this.changeComments = this.changeComments.bind(this);
@@ -57,10 +55,8 @@ class Sale extends React.Component {
   }
 
 	componentDidMount () {
-		console.log('componentDidMount')
 		fetch('http://localhost:3000/api/posts')
 			.then(res => {
-				console.log('res: ' ,res)
 				return res.json()
 			}).then((data) => {
 				let postIds = new Set(this.props.posts.map(function (post) { return post._id; }))
@@ -85,11 +81,8 @@ class Sale extends React.Component {
 
 			fetch('http://localhost:3000/api/users')
 			.then(res => {
-				console.log('res: ' ,res)
 				return res.json()
 			}).then((data) => {
-				console.log("users",data)
-
 				let userIds = new Set(this.props.users.map(function (user) { return user._id; }))
 				let newUsers = data.filter(function (user) {
 					return !userIds.has(user._id)
@@ -108,13 +101,11 @@ class Sale extends React.Component {
 			view:!this.state.view,
 			currentPost:post
 		},function() {
-			console.log("currentPost", app.state.currentPost)
 			axios({
 	  		method: 'post',
 	  		url: `http://localhost:3000/api/viewUp/${app.state.currentPost._id}`,
 	  	})
 		  .then(function (response) {
-		    console.log("view add up ", response);
 		    var newPosts = app.props.posts.map(function(x) {
 		    	if (x._id === response.data._id) {
 		    		x.view++
@@ -130,16 +121,10 @@ class Sale extends React.Component {
 		})
 	}
 
-	changeView () {
-		this.setState({
-			view:!this.state.view
-		})
-	}
 
 	changeComments (data) {
 	  var newPost = Object.assign({}, this.state.currentPost)
 	   newPost.comments.push(data)
-	   console.log("data",data)
 	  this.setState({
 	   currentPost: newPost
 	  })
@@ -147,7 +132,7 @@ class Sale extends React.Component {
 
 
 	showComponent () {
-		if (this.state.view === true) {
+		// if (this.state.view === true) {
 			const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
 			const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
 			const currentPosts = this.props.posts.slice(indexOfFirstPost, indexOfLastPost)
@@ -155,16 +140,11 @@ class Sale extends React.Component {
 				<div>
 					{currentPosts.map((post,i) => {
 						return(
-							<EntrySale post={post} key={i} changeView={this.changeView} changeCurrentPost={this.changeCurrentPost} />
+								<EntrySale post={post} key={i} changeView={this.changeView} changeCurrentPost={this.changeCurrentPost} />
 						)
 					})}
 				</div>
 			)
-		} else {
-			return (
-				<ClickSale currentPost={this.state.currentPost}  changeComments={this.changeComments} changeView={this.changeView}/>
-			)
-		}
 	}
 
 	render() {

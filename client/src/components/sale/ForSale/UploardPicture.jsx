@@ -16,7 +16,6 @@ class UploardPicture extends React.Component {
   	this.setState({
   		img: e.target.files[0]
   	})
-  	console.log(e.target.files[0])
   }
 
   UploardHandler(ev){
@@ -24,12 +23,9 @@ class UploardPicture extends React.Component {
   	ev.preventDefault();
 
   	const imageFile = new FormData();
-    console.log('this.state.img, this.state.img.name: ', this.state.img, this.state.img.name)
   	imageFile.append('image', this.state.img, this.state.img.name)
-  	console.log("imageFile",imageFile)
   	axios.post('/UploardImg',imageFile)
 		 .then(function (response) {
-		    console.log('uploaded picture successfully: ', response);
         app.setState({
           imageUrls: app.state.imageUrls.concat(`http://localhost:3000/${response.data.file}`),
           img: ''
@@ -44,7 +40,6 @@ class UploardPicture extends React.Component {
   }
 
 	render(){
-    console.log('img: ', this.state.imageUrl)
 		return(
 			<div>
         {this.state.imageUrls.map(function(img) {

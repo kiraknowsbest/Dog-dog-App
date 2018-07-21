@@ -6,6 +6,7 @@ import LogoInfoBox from './logIn/LogoInfoBox.jsx'
 import Welcome from './home/Welcome.jsx'
 import Home from './home/Home.jsx'
 import Sale from './sale/Sale/Sale.jsx'
+import ClickSale from './sale/Sale/clickSale.jsx'
 import ForSale from './sale/ForSale/ForSale.jsx'
 import ChosePage from './sale/ChosePage.jsx'
 import logIn from './logIn/logIn.jsx'
@@ -15,7 +16,6 @@ import EntryUserPost from './user/EntryUserPost.jsx'
 
 
 class App extends React.Component {
-
 	render() {
 		return(
 
@@ -28,7 +28,8 @@ class App extends React.Component {
 							<Route exact path='/user' component={UserPage} />
 							<Route path='/login' component={logIn} />
 							<Route path='/home' component={Home} />
-							<Route path='/sale' component={Sale} />
+							<Route exact path='/sale' component={Sale} />
+							<Route path='/sale/:postid' component={ClickSale} />
 							<Route path='/forSale' component={ForSale} />
 							<Route path='/chosePage' component={ChosePage} />
 							<Route path='/user/:postid' component={EntryUserPost} />

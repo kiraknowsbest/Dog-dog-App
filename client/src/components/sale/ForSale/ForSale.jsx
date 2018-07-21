@@ -70,7 +70,6 @@ class ForSale extends React.Component {
 
   	onSubmit (e) {
   		e.preventDefault()
-  		console.log (this.props.login)
   		if (this.props.login === false) {
   			this.props.history.push('/login')
   		} else if (this.props.login) {
@@ -112,7 +111,6 @@ class ForSale extends React.Component {
 	  		}
 	  	})
 		  .then(function (response) {
-		    console.log("post new post! ", response.data._id);
 			    axios({
 			    	method:'post',
 			    	url: "http://localhost:3000/api/addPostToUser",
@@ -122,7 +120,6 @@ class ForSale extends React.Component {
 			    	}
 			    })
 			    .then(function(response) {
-			    	console.log("add post to user",response)
 			    	app.props.history.push('/sale')
 			    })
 			    .catch(function (error) {

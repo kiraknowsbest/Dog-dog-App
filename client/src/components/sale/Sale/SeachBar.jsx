@@ -33,7 +33,6 @@ class SeachBar extends React.Component {
   	this.setState({
   		seach : e.target.value
   	})
-  	console.log("seach",this.state.seach);
   }
 
   keyWordsFilter () {
@@ -51,13 +50,13 @@ class SeachBar extends React.Component {
   		return current
   	})
 
-  	console.log("newpost",newPost)
+
   	for (var i = 0; i < strArr.length; i++) {
   			newPost = newPost.filter(function(post) {
 					return post.keyWords.indexOf(strArr[i].toUpperCase()) > -1
   			})
   	}
-  	console.log(newPost)
+
 
   	this.props.changePostsToStore(newPost)
 
@@ -70,7 +69,6 @@ class SeachBar extends React.Component {
 				  		return current
 				  	})
 
-				  	console.log("newpost",newPost)
 				  	for (var i = 0; i < strArr.length; i++) {
 				  			newPost = newPost.filter(function(post) {
 									return post.keyWords.indexOf(strArr[i].toUpperCase()) > -1
@@ -84,7 +82,7 @@ class SeachBar extends React.Component {
 
 
 	render() {
-		console.log(this.props)
+
 		return(
 			<div className='SeachBar'>
 				<input className="search-input" type="text" onChange={this.seachHandler}/>

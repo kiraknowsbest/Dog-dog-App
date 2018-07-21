@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { changeLocation } from '../../action/changeLocation.js'
 import { Link, withRouter } from 'react-router-dom'
 
+
 const mapStateToProps = (state, props) => {
 
 	return {

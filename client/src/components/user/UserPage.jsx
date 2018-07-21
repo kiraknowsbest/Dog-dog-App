@@ -14,7 +14,6 @@ const mapStateToProps = (state, props) => {
 		posts: state.posts,
 		user: state.user,
 		login: state.login,
-	//	currentPost: state.currentPost
 	}
 }
 
@@ -33,9 +32,6 @@ const mapDispatchToProps = (dispatch, props) => {
 		changeUsersToStore: function (users) {
 			dispatch(changeUsers(users))
 		}
-	//	changeCurrentPostToStroe: function (post) {
-	//		dispatch(changeCurrentPost(post))
-	//	}
 	}
 }
 
@@ -56,12 +52,10 @@ class UserPage extends React.Component {
 	 this.editPost = this.editPost.bind(this);
 	 this.showComponent = this.showComponent.bind(this);
 	 this.handleClickPage = this.handleClickPage.bind(this);
-	 // this.clickSetCurrentPost = this.clickSetCurrentPost.bind(this);
+
 	}
 
-	// clickSetCurrentPost (post) {
-	// 	this.props.changeCurrentPostToStroe(post)
-	// }
+
 
 	handleClickPage (e) {
   	this.setState({

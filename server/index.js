@@ -206,23 +206,8 @@ app.post('/api/signup', function (req, res) {
 	})
 })
 
-
-
 app.use(fallback('index.html', { root }))
 
 app.listen(port, function () {
 	console.log(`listening on port ${port}`)
 });
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -89,7 +89,6 @@ class logIn extends React.Component {
 	  		}
 	  	})
 		  .then(function (response) {
-		    console.log("login! ", response);
 		    app.props.changeUserToStore(response.data)
 		    app.props.changeLogInToStore(true)
 		    app.props.history.push('/home')
@@ -113,7 +112,6 @@ class logIn extends React.Component {
 	  		}
 	  	})
 		  .then(function (response) {
-		    console.log("signup! ", response);
 		    app.props.history.push('/login')
 
 		  })
@@ -122,8 +120,6 @@ class logIn extends React.Component {
 		  });
 		} else {
 			console.log("not same password")
-			console.log(this.state.password)
-			console.log(this.state.repeatPassword)
 		}
 
 	}
