@@ -3,9 +3,7 @@ import { connect } from 'react-redux'
 import { changeLocation } from '../../action/changeLocation.js'
 import { Link, withRouter } from 'react-router-dom'
 
-
 const mapStateToProps = (state, props) => {
-
 	return {
 		location: state.location,
 		login: state.login,
@@ -22,18 +20,15 @@ const mapDispatchToProps = (dispatch, props) => {
 }
 
 class LogoInfoBox extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
 			logIn : true,
 			locationBox: false,
-
 		}
-
-	this.changeLocation = this.changeLocation.bind(this);
-	this.clickSwith = this.clickSwith.bind(this);
-	this.switchToUserPage = this.switchToUserPage.bind(this);
+		this.changeLocation = this.changeLocation.bind(this);
+		this.clickSwith = this.clickSwith.bind(this);
+		this.switchToUserPage = this.switchToUserPage.bind(this);
 	}
 
 	changeLocation (e) {

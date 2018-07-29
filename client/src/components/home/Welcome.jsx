@@ -2,12 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { changeLocation } from '../../action/changeLocation.js'
-
 import Home from './Home.jsx'
 
-
 const mapStateToProps = (state, props) => {
-
 	return {
 		user: state.user,
 		location: state.location
@@ -23,15 +20,14 @@ const mapDispatchToProps = (dispatch, props) => {
 }
 
 class Welcome extends React.Component {
-
 	constructor(props) {
-	  super(props);
+		super(props);
 	this.locationHandler = this.locationHandler.bind(this);
 	}
 
-  locationHandler(e) {
-  	this.props.changeLocationToStore(e.target.value)
-  }
+	locationHandler(e) {
+		this.props.changeLocationToStore(e.target.value)
+	}
 
 	render() {
 		return(

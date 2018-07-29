@@ -151,8 +151,6 @@
     top: 115px;
     right: 30px;
     text-align: left;
-    /*float: right;*/
-/*    margin: 30px 30px;*/
     width: 10%;
 }
 
@@ -228,10 +226,11 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    opacity: 50%;
 }
 
 .post:hover {
-   border: 1px solid #ffc447a1;
+   border: 2px solid #ffc447a1;
    outline: none;
    box-shadow: 0 0 20px #ffc447a1;
 }
@@ -246,7 +245,6 @@
 
 .infoBoxEntrySale {
     list-style: none;
-/*    display: flex;*/
     padding-bottom: 15px;
 }
 
@@ -539,27 +537,33 @@
 }
 
 .EntrySale-Title {
-    padding: 5px 0 5px 30px;
-    background: url(http://metal.graphics/wp-content/uploads/2016/07/metallic-gold.jpg) -80px -80px;
+    padding: 0 0 0 30px;
+    line-height: 50px;
+    background: url(http://metal.graphics/wp-content/uploads/2016/07/metallic-gold.jpg) no-repeat;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-weight: bold;
     font-size: 25px;
 }
 
+.EntrySale-Title:hover {
+    color: pink;
+    -webkit-text-fill-color: #ffc447a1;
+}
+
 .EntrySale-Title-Box {
-        background: linear-gradient(to right, #c5c9ce, #e3e9ee);nav
+    background: linear-gradient(to right, #ddd, #fff);
+    margin-left: -16px;
+    color: pink;
 }
 
 .entry-sale-item {
     width: 33%;
-/*    display: inline-flex;*/
 }
 .entry-sale-item:hover {
    background: url(http://metal.graphics/wp-content/uploads/2016/07/metallic-gold.jpg) -80px -80px;
    -webkit-text-fill-color: transparent;
    -webkit-background-clip: text;
-   box-shadow: 2px 2px 4px #000000;
 }
 
 .entry-sale-field-title {
@@ -669,7 +673,7 @@ span.psw {
 }
 
 .basic-btn {
-    height: 35px;
+    min-height: 35px;
     width: 10%;
     cursor: pointer;
     border-radius: 2.5px;
@@ -694,21 +698,17 @@ span.psw {
     font-weight: bold;
     font-size: 40px;
     font-family: arial, helvetica;
-
-
-}
-
-.post-page-title:hover {
-    text-shadow: .75px .5px rgba(100, 100, 100, .8);
+    line-height: 80px;
+    transition: 0.15s;
 }
 
 .post-page-title-box {
-    border-radius: 10%;
+    border-radius: 5px;
     padding: 10px;
     border: 20px solid ;
-    background-color: ;
     height: 80px;
     border-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) 100% round;
+    transition: .5s;
 }
 
 .post-page-title-box:hover {
@@ -722,20 +722,11 @@ span.psw {
     text-align: center;
     height: 400px;
     margin-top: 30px;
+    width: 100%;
     margin-bottom: 30px;
     padding: 20px;
     border: 3px solid ;
     border-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) 10% round;
-}
-
-.post-page-box:hover {
-   color: red;
-   box-shadow: 0 0 20px #ff5447;
-   border: 2px solid ;
-   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ;
-   background-repeat: no-repeat;
-   background-size: 300px 200px;
-   background-position: center;
 }
 
 .margin-left-30 {
@@ -750,58 +741,34 @@ span.psw {
     font-family: arial, helvetica;
     font-size:25px;
     text-align: center;
-    width: 50%;
+    width: 100%;
     height: 300px;
     margin-top: 30px;
     margin-bottom: 30px;
     padding: 20px;
     border: 3px solid ;
     border-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) 10% round;
-}
-
-.info-box:hover {
-   color: red;
-   box-shadow: 0 0 20px #ff5447;
-   border: 2px solid ;
-   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ;
-   background-repeat: no-repeat;
-   background-size: 300px 200px;
-   background-position: center;
 }
 
 .price-box {
     font-family: arial, helvetica;
     font-size:25px;
     text-align: center;
-    width: 50%;
+    width: 100%;
     height: 300px;
     margin-top: 30px;
     margin-bottom: 30px;
     padding: 20px;
     border: 3px solid ;
     border-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) 10% round;
-}
-
-.price-box:hover {
-
-   color: red;
-   box-shadow: 0 0 20px #ff5447;
-   border: 2px solid ;
-   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ;
-   background-repeat: no-repeat;
-   background-size: 300px 200px;
-   background-position: center;
-}
-
-.small-box {
-    display:flex;
+    transition: 0.5s;
 }
 
 .connect-box {
     font-family: arial, helvetica;
     font-size:25px;
     text-align: center;
-    width: 50%;
+    width: 100%;
     height: 300px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -809,35 +776,18 @@ span.psw {
     border: 3px solid ;
     border-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) 10% round;
 }
-.connect-box:hover {
-   color: red;
-   box-shadow: 0 0 20px #ff5447;
-   border: 2px solid ;
-   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ;
-   background-repeat: no-repeat;
-   background-size: 300px 200px;
-   background-position: center;
-}
+
 .location-box {
     font-family: arial, helvetica;
     font-size:25px;
     text-align: center;
-    width: 50%;
+    width: 100%;
     height: 300px;
     margin-top: 30px;
     margin-bottom: 30px;
     padding: 20px;
     border: 3px solid ;
     border-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) 10% round;
-}
-.location-box:hover {
-   color: red;
-   box-shadow: 0 0 20px #ff5447;
-   border: 2px solid ;
-   background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/51/Paw-print.svg) ;
-   background-repeat: no-repeat;
-   background-size: 300px 200px;
-   background-position: center;
 }
 
 .comment-box {

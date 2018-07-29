@@ -5,14 +5,9 @@ const fallback = require('express-history-api-fallback')
 const fileUpload = require('express-fileupload')
 const dbModels = require('../database/Schema')
 const bcrypt = require('bcryptjs');
-
-
-
 const app = express();
 const port = process.env.PORT || 3000;
-
 const root = __dirname + '/../client/dist'
-
 
 app.use(express.static(root));
 app.use(bodyParser.json());
@@ -30,7 +25,6 @@ app.post('/api/submitPost', function(req,res) {
 			res.status(200).send(post)
 		}
 	})
-	console.log("got post ", req.body)
 })
 
 app.post('/api/addPostToUser', function(req, res) {
@@ -42,12 +36,11 @@ app.post('/api/addPostToUser', function(req, res) {
 		} else {
 			res.status(200).send(data)
 		}
-	} )
+	})
 })
 
 app.post('/UploardImg', function(req,res) {
 	let file = req.files.image;
-	console.log('file: ', file)
 	file.name = file.name.replace(' ', '_')
 	file.mv(`${__dirname}/img/${file.name}`, function (err) {
 		if (err) {
@@ -59,15 +52,13 @@ app.post('/UploardImg', function(req,res) {
 
 app.post('/api/comment/:postId', function(req,res) {
 	var id = req.params.postId;
-	console.log("req.body",req.body)
 	dbModels.DogPost.update({'_id' : id }, { $push: { comments: req.body }}, function(err,data) {
-				if (err) {
-					res.status(404).send(err)
-				} else {
-					res.status(200).send(req.body)
-				}
-			});
-
+		if (err) {
+			res.status(404).send(err)
+		} else {
+			res.status(200).send(req.body)
+		}
+	});
 })
 
 app.post('/api/viewUp/:postId', function(req,res) {
@@ -83,26 +74,26 @@ app.post('/api/viewUp/:postId', function(req,res) {
 })
 
 app.post('/api/editPost', function(req,res) {
-	console.log("editPost",req.body)
 	dbModels.DogPost.update({_id: req.body.id}, { $set: {
-			photo: req.body.photo,
-	    	title: req.body.title,
-	    	type: req.body.type,
-	    	size: req.body.size,
-	    	sex: req.body.sex,
-	    	year: req.body.year,
-	    	month: req.body.month,
-	    	color: req.body.color,
-	    	fullPrice: req.body.fullPrice,
-	    	deposit: req.body.deposit,
-	    	email: req.body.email,
-	    	call: req.body.call,
-	    	street: req.body.street,
-	    	city: req.body.city,
-	    	state: req.body.state,
-	    	zipcode: req.body.zipcode,
-	    	description: req.body.description
-	}},function(err,data) {
+		photo: req.body.photo,
+			title: req.body.title,
+			type: req.body.type,
+			size: req.body.size,
+			sex: req.body.sex,
+			year: req.body.year,
+			month: req.body.month,
+			color: req.body.color,
+			fullPrice: req.body.fullPrice,
+			deposit: req.body.deposit,
+			email: req.body.email,
+			call: req.body.call,
+			street: req.body.street,
+			city: req.body.city,
+			state: req.body.state,
+			zipcode: req.body.zipcode,
+			description: req.body.description
+		}
+	}, function(err,data) {
 		if (err) {
 			res.status(404).send(err)
 		} else {
@@ -118,7 +109,7 @@ app.post('/api/deletePosts', function(req,res) {
 		if(err) {
 			res.status(404).send(err)
 		}
-	} )
+	})
 
 	dbModels.DogPost.remove({_id: id}, function(err,data) {
 		if (err) {
@@ -129,21 +120,15 @@ app.post('/api/deletePosts', function(req,res) {
 	})
 })
 
-
-
 app.get('/api/posts', function (req, res) {
 	dbModels.DogPost.find({}, function (err, data) {
-		// console.log('data: ', data)
 		res.setHeader('Content-Type', 'application/json');
 		res.status(200).send(JSON.stringify(data))
 	})
 })
 
-
-
 app.get('/api/users', function (req, res) {
 	dbModels.User.find({}, function (err, data) {
-		console.log('data: ', data)
 		res.setHeader('Content-Type', 'application/json');
 		res.status(200).send(JSON.stringify(data))
 	})
@@ -163,7 +148,6 @@ app.get('/api/getOnePost/:postId', function(req, res) {
 
 
 app.post('/api/login', function (req, res) {
-	console.log("got the login data", req.body)
 	dbModels.User.findOne({userName: req.body.username}, function (err, data) {
 		if (err) {
 			res.status(404).send(err)
@@ -173,7 +157,6 @@ app.post('/api/login', function (req, res) {
 			} else {
 				var password = data.userPassword
 				var match = bcrypt.compareSync(req.body.password, password);
-				console.log("match",match)
 				if (match) {
 					res.status(200).send(data.userName)
 				} else {
@@ -185,7 +168,6 @@ app.post('/api/login', function (req, res) {
 })
 
 app.post('/api/signup', function (req, res) {
-	console.log("got the login data", req.body)
 	var password = req.body.password
 	var salt = bcrypt.genSaltSync(10);
 	var hash = bcrypt.hashSync(password, salt);
